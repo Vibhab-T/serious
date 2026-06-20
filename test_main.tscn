@@ -10,12 +10,12 @@
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1904345030]
 
 [node name="boundaey" type="StaticBody2D" parent="." unique_id=1257402859]
-position = Vector2(0, 200)
+position = Vector2(0, 220)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaey" unique_id=2125463113]
 shape = SubResource("WorldBoundaryShape2D_tcanr")
 
 [node name="Ferris" parent="." unique_id=1066585455 instance=ExtResource("1_b6ro0")]
+plat_count = 10
 
 [node name="CharacterBody2D" parent="." unique_id=1825556768 instance=ExtResource("2_tcanr")]
-position = Vector2(-89, 127)
