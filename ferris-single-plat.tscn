@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://usmroxpc0f5n"]
+
+[ext_resource type="Script" uid="uid://wddtfq8b6qvy" path="res://ferris-single-plat.gd" id="1_koc2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ml6c"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=293009516]
+script = ExtResource("1_koc2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748927327]
+scale = Vector2(5, 2.5)
+shape = SubResource("RectangleShape2D_1ml6c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=866925472]
+offset_left = -49.0
+offset_top = -21.0
+offset_right = 50.0
+offset_bottom = 22.0

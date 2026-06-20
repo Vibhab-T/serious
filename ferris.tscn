@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://eiyqyvs25fok"]
+
+[ext_resource type="Script" uid="uid://dfjwqyrhrpwud" path="res://ferris.gd" id="1_p8jq4"]
+
+[node name="Ferris" type="Node2D" unique_id=1066585455]
+script = ExtResource("1_p8jq4")
