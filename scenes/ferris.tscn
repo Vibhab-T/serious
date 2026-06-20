@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b04h3ib1i0vka"]
+
+[ext_resource type="Texture2D" uid="uid://70427l74c1gp" path="res://assets/wheel.png" id="1_o3nj0"]
+[ext_resource type="Script" uid="uid://vnhy3rxb81il" path="res://scripts/ferris.gd" id="1_tvnib"]
+
+[node name="ferris" type="Node2D" unique_id=784182267]
+script = ExtResource("1_tvnib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=793579293]
+texture = ExtResource("1_o3nj0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1050228942]
+zoom = Vector2(0.76, 0.76)
