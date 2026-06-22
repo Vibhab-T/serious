@@ -51,7 +51,7 @@ func spawn_anchors() -> void:
 		anchor_instance.position = Vector2(cos(angle), sin(angle))*radius
 		anchor_instance.scale = Vector2(0.325, 0.125)
 		anchor_array.append(anchor_instance)
-		
+
 func spawn_containers() -> void:
 	for i in range(anchor_count):
 		var container_instance = container.instantiate()
@@ -59,7 +59,7 @@ func spawn_containers() -> void:
 		
 		var angle = TAU * float(i) / anchor_count;
 		container_instance.position = Vector2(cos(angle), sin(angle))*radius
-		container_instance.scale = Vector2(2, 1.5)
+		container_instance.scale = Vector2(2, 3.5)
 		container_instance.position.y +=2;
 		container_array.append(container_instance)
 
@@ -76,7 +76,7 @@ func join_anchors_and_containers() -> void:
 		joint.softness = 0.1
 		joint.bias = 0.1
 		joint_array.append(joint)
-		
+
 func join_anchors_and_containers2():
 	for i in range(anchor_count):
 		var joint = PinJoint2D.new();
@@ -91,7 +91,6 @@ func join_anchors_and_containers2():
 		joint.bias = 0.05
 		joint_array2.append(joint)	
 
-		
 func _draw() -> void:
 	for joint in joint_array:
 		var pos_a = to_local(joint.get_node(joint.node_a).global_position)
