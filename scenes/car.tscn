@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://davpig81xfvs6"]
+
+[ext_resource type="Texture2D" uid="uid://onav1llstv4w" path="res://assets/car.png" id="1_c35m8"]
+[ext_resource type="Script" uid="uid://1gvdnwgbougm" path="res://scripts/car.gd" id="1_qt2eu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c35m8"]
+radius = 23.0
+height = 93.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qt2eu"]
+radius = 14.999999
+height = 66.0
+
+[node name="car" type="CharacterBody2D" unique_id=1215275054]
+rotation = 1.5707964
+script = ExtResource("1_qt2eu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435583357]
+visible = false
+position = Vector2(0.5, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_c35m8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582301101]
+position = Vector2(-1.9999958, 96)
+scale = Vector2(0.504, 0.3)
+texture = ExtResource("1_c35m8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1429294945]
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=495233772]
+position = Vector2(2.3841858e-07, 2)
+shape = SubResource("CapsuleShape2D_qt2eu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

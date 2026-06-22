@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://pbs4xpais1er"]
+
+[ext_resource type="Texture2D" uid="uid://bf5rr2m4kfv7w" path="res://assets/docs.png" id="1_hv5w2"]
+[ext_resource type="Script" uid="uid://xyl8eaoqmpwn" path="res://scripts/docs.gd" id="1_w5m6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5w2"]
+size = Vector2(9.715128, 8.822201)
+
+[node name="docs" type="Area2D" unique_id=1469164731 groups=["docs"]]
+script = ExtResource("1_w5m6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840771250]
+position = Vector2(-0.3625003, -1.2262502)
+scale = Vector2(2.545, 2.545)
+shape = SubResource("RectangleShape2D_hv5w2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459778918]
+scale = Vector2(2.545, 2.545)
+texture = ExtResource("1_hv5w2")
+metadata/_edit_group_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
