@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://dovpj8qrrlv68"]
 
-[ext_resource type="Texture2D" uid="uid://8c4ho8ra6psh" path="res://assets/badcar.png" id="1_vguok"]
+[ext_resource type="Texture2D" uid="uid://cxymneb407x6b" path="res://assets/bumpercars.png" id="1_vguok"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_33mgd"]
-radius = 33.347477
-height = 144.78314
+radius = 41.06323
+height = 148.29175
 
 [node name="parked" type="StaticBody2D" unique_id=171156178]
 scale = Vector2(0.805, 0.755)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1215560893]
-position = Vector2(-2, 320)
-scale = Vector2(0.435, 1)
+z_index = 1
+position = Vector2(-1.242236, -3.9735098)
+scale = Vector2(1.5450854, 1.7069539)
 texture = ExtResource("1_vguok")
+region_enabled = true
+region_rect = Rect2(257, 0, 64, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85383548]
 position = Vector2(-2, -3)

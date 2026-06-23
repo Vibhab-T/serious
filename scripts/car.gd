@@ -3,9 +3,9 @@ extends CharacterBody2D
 var engine_power = 400   
 var acceleration = Vector2.ZERO
 # distance between front and rear axel
-var wheel_base = 70
+var wheel_base = 50
 # how much can car rotate
-var steering_angle = 25
+var steering_angle = 35
 var steer_direction = 0
 
 var docs_counter = 0
@@ -44,7 +44,8 @@ func calculate_steering(delta):
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("docs")):
 		set_docs( docs_counter + 1)
-	
+		
 func set_docs(update_docs_count: int) -> void:
 	docs_counter = update_docs_count
-	docs_label.text = "docs : " + str(docs_counter)
+	# Set the text with the image tag
+	docs_label.bbcode_text = "[img]res://assets/docs_ui.png[/img]" + str(docs_counter)
