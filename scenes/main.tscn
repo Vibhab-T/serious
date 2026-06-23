@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cpmrvda12rgxe"]
+
+[ext_resource type="PackedScene" uid="uid://c5ihvcdcc5oq0" path="res://scenes/ferris.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="2_0wfyh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=596094400]
+
+[node name="Ferris" parent="." unique_id=1255185989 instance=ExtResource("1_o5qli")]
+position = Vector2(320, 180)
+
+[node name="BottomWorldBoudnary" type="StaticBody2D" parent="." unique_id=1273329232]
+position = Vector2(0, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWorldBoudnary" unique_id=1919094254]
+shape = SubResource("WorldBoundaryShape2D_o5qli")
+
+[node name="player" parent="." unique_id=1549434360 instance=ExtResource("2_0wfyh")]

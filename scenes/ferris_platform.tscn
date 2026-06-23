@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c027j16jtn2lc"]
+
+[ext_resource type="Script" uid="uid://c8r7jv0agtdot" path="res://scripts/ferris_platform.gd" id="1_gp21u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp21u"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5blgu"]
+size = Vector2(20, 5)
+
+[node name="FerrisPlatform" type="Node2D" unique_id=1643191485]
+script = ExtResource("1_gp21u")
+
+[node name="StaticAnchorMiddle" type="StaticBody2D" parent="." unique_id=1859363341]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticAnchorMiddle" unique_id=528316149]
+shape = SubResource("RectangleShape2D_gp21u")
+
+[node name="StaticAnchorRight" type="StaticBody2D" parent="." unique_id=1022307652]
+position = Vector2(10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticAnchorRight" unique_id=597731149]
+shape = SubResource("RectangleShape2D_gp21u")
+
+[node name="StaticAnchorLeft" type="StaticBody2D" parent="." unique_id=1314639953]
+position = Vector2(-10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticAnchorLeft" unique_id=180417492]
+shape = SubResource("RectangleShape2D_gp21u")
+
+[node name="JointRight" type="PinJoint2D" parent="." unique_id=1779751528]
+position = Vector2(10, 15)
+node_a = NodePath("../StaticAnchorRight")
+node_b = NodePath("../RigidPlatRight")
+
+[node name="JointRightUp" type="PinJoint2D" parent="." unique_id=895890726]
+position = Vector2(5, 0)
+node_a = NodePath("../StaticAnchorRight")
+node_b = NodePath("../StaticAnchorMiddle")
+
+[node name="JointLeftUp" type="PinJoint2D" parent="." unique_id=229320637]
+position = Vector2(-5, 0)
+node_a = NodePath("../StaticAnchorLeft")
+node_b = NodePath("../StaticAnchorMiddle")
+
+[node name="JointLeft" type="PinJoint2D" parent="." unique_id=1424558491]
+position = Vector2(-10, 15)
+node_a = NodePath("../StaticAnchorLeft")
+node_b = NodePath("../RigidPlatLeft")
+
+[node name="JointMiddle" type="PinJoint2D" parent="." unique_id=405009661]
+position = Vector2(0, 30)
+node_a = NodePath("../RigidPlatLeft")
+node_b = NodePath("../RigidPlatRight")
+
+[node name="RigidPlatLeft" type="RigidBody2D" parent="." unique_id=1329850163]
+position = Vector2(-10, 30)
+mass = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidPlatLeft" unique_id=1411699635]
+shape = SubResource("RectangleShape2D_5blgu")
+
+[node name="ColorRectLeft" type="ColorRect" parent="RigidPlatLeft" unique_id=620848859]
+offset_left = -10.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 2.0
+
+[node name="RigidPlatRight" type="RigidBody2D" parent="." unique_id=1376298507]
+position = Vector2(10, 30)
+mass = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidPlatRight" unique_id=984395358]
+shape = SubResource("RectangleShape2D_5blgu")
+
+[node name="ColorRectRight" type="ColorRect" parent="RigidPlatRight" unique_id=1876705967]
+offset_left = -10.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 2.0
