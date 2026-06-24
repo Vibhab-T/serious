@@ -1,19 +1,84 @@
 [gd_scene format=3 uid="uid://p2xvibdq823p"]
 
-[ext_resource type="Script" uid="uid://ct5p42wal8q4g" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://j43oc2jj8bqh" path="res://assets/idle_clown_64x32.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ct5p42wal8q4g" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4r1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(12, 22)
+size = Vector2(17, 50)
 
 [node name="player" type="CharacterBody2D" unique_id=1549434360]
-script = ExtResource("1_3vyb7")
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1091880254]
+sprite_frames = SubResource("SpriteFrames_y4r1p")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.9717347
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=688768874]
-position = Vector2(0, 1)
+position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_3vyb7")
-
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=112555428]
-position = Vector2(0, -1)
-color = Color(0.7740956, 0.3755981, 0.5880867, 1)
-polygon = PackedVector2Array(-1.4954765, -11.241147, 3.553145, -8.187465, 2.532183, -3.0826547, 5.799259, -1.2449267, 3.859436, 5.2892246, 3.5695248, 14.207334, -2.8543644, 14.330869, -3.348533, 5.930401, -6.93108, -0.36996037, -4.0897474, -2.717147, -7.5487547, -7.287986)
-uv = PackedVector2Array(-5089.677, -1704.0308, -3455.4033, -2238.2368, -3710.88, -960.85254, -2893.3545, -500.99414, -3378.7598, 1134.0581, -3451.3047, 3365.6523, -5058.7656, 3396.565, -5182.422, 1294.4993, -6078.8906, -282.04858, -5367.8984, -869.39, -6233.451, -2013.1597)

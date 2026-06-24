@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://das8qqtlop4tk"]
+
+[ext_resource type="Script" uid="uid://b2sql8j47v8v2" path="res://scripts/docs_ui.gd" id="1_0gcfs"]
+[ext_resource type="Texture2D" uid="uid://cuc13pdb55sxc" path="res://assets/docs_floating.png" id="1_sbau5"]
+
+[node name="DocsUI" type="Control" unique_id=803394078]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_0gcfs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2090647303]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 30.0
+texture = ExtResource("1_sbau5")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TotalDocs" type="Label" parent="." unique_id=550176411]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 15.0
+offset_bottom = 27.0
+text = " 0"
+
+[node name="SpawnedDocs" type="Label" parent="." unique_id=1510798494]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 22.0
+text = " 0"

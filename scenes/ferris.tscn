@@ -1,9 +1,32 @@
-[gd_scene format=3 uid="uid://c5ihvcdcc5oq0"]
+[gd_scene format=3 uid="uid://b04h3ib1i0vka"]
 
-[ext_resource type="Script" uid="uid://olhj4lhmf8ip" path="res://scripts/ferris.gd" id="1_tvnib"]
+[ext_resource type="Script" uid="uid://vnhy3rxb81il" path="res://scripts/ferris.gd" id="1_tvnib"]
 
-[node name="Ferris" type="Node2D" unique_id=1255185989]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7lj6"]
+size = Vector2(30, 180)
+
+[node name="Ferris" type="Node2D" unique_id=442394560]
 script = ExtResource("1_tvnib")
-FERRIS_RADIUS = 100.0
-FERRIS_SPEED = 0.5
-FERRIS_PLAT_COUNT = 5
+
+[node name="Pillar" type="StaticBody2D" parent="." unique_id=229521126]
+collision_layer = 2
+collision_mask = 2
+
+[node name="ColorRect" type="ColorRect" parent="Pillar" unique_id=237618533]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 15.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar" unique_id=312728508]
+shape = SubResource("RectangleShape2D_e7lj6")
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1275562948]

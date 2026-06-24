@@ -15,6 +15,11 @@ run/main_scene="uid://cpmrvda12rgxe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventController="*uid://bk6r51vi5k1t0"
+GameController="*uid://ctdr5lm4nfkf5"
+
 [display]
 
 window/size/viewport_width=640

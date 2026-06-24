@@ -1,37 +1,50 @@
 extends Node2D
 
-@export var FERRIS_RADIUS: float = 200
-@export var FERRIS_SPEED: float = 100
-@export var FERRIS_PLAT_COUNT: int = 8
+@onready var pillar: StaticBody2D = $Pillar
 
 var plat : PackedScene = preload("res://scenes/ferris_platform.tscn")
+var plats : Array[AnimatableBody2D] = []
 
-var plats : Array[Node2D] = []
-var angle_off : float = 0.0
+@export var count :int = 8
+@export var speed : float = 0.5
+@export var radius: float = 100
+@export var angle_off : float = 0.0
+@export var spoke_color: Color = Color.RED
+@export var platform_color : Color = Color.GREEN
+
+func spawn_platforms() -> void:
+	for i in range(count):
+		var p = plat.instantiate()
+		add_child(p)
+		p.get_node("ColorRect").color = platform_color
+		plats.append(p)
+		
+		var angle = TAU * float(i) / count
+		
+		p.position = Vector2(cos(angle), sin(angle)) * radius
+
+func rotate_plats(delta: float) -> void:
+	angle_off += speed * delta
+	
+	for i in range(plats.size()):
+		var p = plats[i]
+		var angle = TAU * float(i) / count + angle_off
+		p.position = Vector2(cos(angle), sin(angle)) * radius	
+
+func draw_spokes() -> void:
+	for i in range(count):
+		draw_line(pillar.position, plats[i].position, spoke_color)
+
+func _draw() -> void:
+	draw_spokes()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(FERRIS_PLAT_COUNT):
-		var p = plat.instantiate()
-		add_child(p)
-		plats.append(p)
+	spawn_platforms()
 
+func _physics_process(delta: float) -> void:
+	rotate_plats(delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	angle_off += FERRIS_SPEED * delta
-	
-	for i in range(FERRIS_PLAT_COUNT):
-		var angle = TAU * i/FERRIS_PLAT_COUNT + angle_off
-		var pos = Vector2(cos(angle), sin(angle)) * FERRIS_RADIUS
-		
-		plats[i].position = pos
-	
+func _process(_delta: float) -> void:
 	queue_redraw()
-
-func _draw():
-	for i in range(FERRIS_PLAT_COUNT):
-		var angle = TAU * i / FERRIS_PLAT_COUNT + angle_off
-		var rim_pos = Vector2(cos(angle), sin(angle)) * FERRIS_RADIUS
-		
-		draw_circle(rim_pos, 5, Color.YELLOW)

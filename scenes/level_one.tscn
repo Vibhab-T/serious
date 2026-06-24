@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cpmrvda12rgxe"]
+
+[ext_resource type="Script" uid="uid://ldh38mo15u6p" path="res://scripts/level_one.gd" id="1_5rfim"]
+[ext_resource type="PackedScene" uid="uid://das8qqtlop4tk" path="res://scenes/docs_ui.tscn" id="2_r4wdr"]
+[ext_resource type="PackedScene" uid="uid://b04h3ib1i0vka" path="res://scenes/ferris.tscn" id="3_bhu28"]
+[ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="4_4p75b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
+
+[node name="LevelOne" type="Node2D" unique_id=1009878679]
+script = ExtResource("1_5rfim")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=978680376]
+
+[node name="DocsUI" parent="CanvasLayer" unique_id=803394078 instance=ExtResource("2_r4wdr")]
+
+[node name="Ferris" parent="." unique_id=442394560 instance=ExtResource("3_bhu28")]
+position = Vector2(201, 239)
+count = 2
+
+[node name="Ferris2" parent="." unique_id=2109041734 instance=ExtResource("3_bhu28")]
+position = Vector2(503, 140)
+count = 3
+speed = 0.75
+radius = 110.0
+spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
+platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
+
+[node name="Boundary" type="StaticBody2D" parent="." unique_id=2076636672]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary" unique_id=1235378234]
+position = Vector2(2, 343)
+shape = SubResource("WorldBoundaryShape2D_o5qli")
+
+[node name="player" parent="." unique_id=1549434360 instance=ExtResource("4_4p75b")]
+position = Vector2(42, 0)
