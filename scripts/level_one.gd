@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if (GameController.check_level_cleared()) :
-		get_tree().change_scene_to_packed(level_two)
-		
+#func _process(_delta: float) -> void:
+	#if (GameController.check_level_cleared()) :
+		#get_tree().change_scene_to_packed(level_two)
+		#

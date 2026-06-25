@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8po25el6caxu"]
+
+[ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_4i5uq"]
+[ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_jyl00"]
+[ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="3_jyl00"]
+
+[node name="LevelThree" type="Node2D" unique_id=1367023866]
+
+[node name="Background" parent="." unique_id=68444420 instance=ExtResource("1_4i5uq")]
+position = Vector2(320, 180)
+
+[node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("2_jyl00")]
+
+[node name="player" parent="." unique_id=1549434360 instance=ExtResource("3_jyl00")]
+position = Vector2(46, -4)

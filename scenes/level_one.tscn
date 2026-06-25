@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://das8qqtlop4tk" path="res://scenes/docs_ui.tscn" id="2_r4wdr"]
 [ext_resource type="PackedScene" uid="uid://b04h3ib1i0vka" path="res://scenes/ferris.tscn" id="3_bhu28"]
 [ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="4_4p75b"]
+[ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="5_r4wdr"]
+[ext_resource type="PackedScene" uid="uid://bine4dq7mxuyb" path="res://scenes/level_gate.tscn" id="6_bhu28"]
+[ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="7_4p75b"]
+[ext_resource type="PackedScene" uid="uid://cd05ikpjm6y28" path="res://scenes/level_two.tscn" id="7_astit"]
+[ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="8_y8ti4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
 
@@ -15,11 +20,27 @@ script = ExtResource("1_5rfim")
 [node name="DocsUI" parent="CanvasLayer" unique_id=803394078 instance=ExtResource("2_r4wdr")]
 
 [node name="Ferris" parent="." unique_id=442394560 instance=ExtResource("3_bhu28")]
-position = Vector2(201, 239)
+position = Vector2(100, 330)
 count = 2
 
 [node name="Ferris2" parent="." unique_id=2109041734 instance=ExtResource("3_bhu28")]
-position = Vector2(503, 140)
+position = Vector2(230, 145)
+count = 3
+speed = 0.75
+radius = 110.0
+spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
+platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
+
+[node name="Ferris3" parent="." unique_id=127989289 instance=ExtResource("3_bhu28")]
+position = Vector2(469, 93)
+count = 3
+speed = 0.75
+radius = 110.0
+spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
+platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
+
+[node name="Ferris4" parent="." unique_id=1854389814 instance=ExtResource("3_bhu28")]
+position = Vector2(563, 338)
 count = 3
 speed = 0.75
 radius = 110.0
@@ -33,4 +54,18 @@ position = Vector2(2, 343)
 shape = SubResource("WorldBoundaryShape2D_o5qli")
 
 [node name="player" parent="." unique_id=1549434360 instance=ExtResource("4_4p75b")]
+z_index = 1
 position = Vector2(42, 0)
+
+[node name="Background" parent="." unique_id=68444420 instance=ExtResource("5_r4wdr")]
+position = Vector2(297, 179)
+
+[node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("6_bhu28")]
+position = Vector2(610, -110)
+to_level = ExtResource("7_astit")
+
+[node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("7_4p75b")]
+z_index = 1
+
+[node name="Camera" parent="." unique_id=418440835 instance=ExtResource("8_y8ti4")]
+offset = Vector2(320, 180)

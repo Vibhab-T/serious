@@ -3,12 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="1_8lyp7"]
 [ext_resource type="PackedScene" uid="uid://das8qqtlop4tk" path="res://scenes/docs_ui.tscn" id="2_kkfyh"]
 [ext_resource type="PackedScene" uid="uid://b04h3ib1i0vka" path="res://scenes/ferris.tscn" id="3_4yacq"]
+[ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="4_kkfyh"]
+[ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="5_4yacq"]
+[ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="6_mmtqo"]
+[ext_resource type="PackedScene" uid="uid://bine4dq7mxuyb" path="res://scenes/level_gate.tscn" id="7_l7e5k"]
+[ext_resource type="PackedScene" uid="uid://8po25el6caxu" path="res://scenes/level_three.tscn" id="8_kp5rg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8lyp7"]
 
 [node name="LevelTwo" type="Node2D" unique_id=2129866509]
 
 [node name="player" parent="." unique_id=1549434360 instance=ExtResource("1_8lyp7")]
+z_index = 1
 position = Vector2(32, 64)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=399368027]
@@ -32,3 +38,15 @@ platform_color = Color(0.80232644, 0.8106295, 0.9843685, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary" unique_id=255027643]
 position = Vector2(0, 333)
 shape = SubResource("WorldBoundaryShape2D_8lyp7")
+
+[node name="Background" parent="." unique_id=68444420 instance=ExtResource("4_kkfyh")]
+position = Vector2(320, 180)
+
+[node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("5_4yacq")]
+
+[node name="Camera" parent="." unique_id=418440835 instance=ExtResource("6_mmtqo")]
+offset = Vector2(320, 180)
+
+[node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("7_l7e5k")]
+position = Vector2(634, 254)
+to_level = ExtResource("8_kp5rg")
