@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://df4o36e57swoc"]
+
+[ext_resource type="PackedScene" uid="uid://cinq6g4j6derg" path="res://scenes/arena.tscn" id="1_3yuvj"]
+[ext_resource type="PackedScene" uid="uid://bcaw3bkapci1r" path="res://scenes/arena_two.tscn" id="2_4blob"]
+[ext_resource type="Texture2D" uid="uid://j43oc2jj8bqh" path="res://assets/idle_clown_64x32.png" id="3_4blob"]
+[ext_resource type="Script" uid="uid://cpc3r0yumtrip" path="res://scripts/player.gd" id="4_wd8gw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd8gw"]
+atlas = ExtResource("3_4blob")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1edg"]
+atlas = ExtResource("3_4blob")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at3qo"]
+atlas = ExtResource("3_4blob")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ns4j"]
+atlas = ExtResource("3_4blob")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtdq5"]
+atlas = ExtResource("3_4blob")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tef7n"]
+atlas = ExtResource("3_4blob")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oawn"]
+atlas = ExtResource("3_4blob")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxytt"]
+atlas = ExtResource("3_4blob")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73ig6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd8gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1edg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at3qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ns4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtdq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tef7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oawn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxytt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="bumper_game" type="Node2D" unique_id=644923179]
+
+[node name="arena" parent="." unique_id=943058106 instance=ExtResource("1_3yuvj")]
+
+[node name="arena_two" parent="." unique_id=1104855998 instance=ExtResource("2_4blob")]
+visible = false
+position = Vector2(2, -420)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2096249826]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_73ig6")
+animation = &"idle"
+frame_progress = 0.6064278
+script = ExtResource("4_wd8gw")

@@ -30,6 +30,10 @@ region_rect = Rect2(-1, 0, 64, 80)
 
 [node name="car" parent="." unique_id=1215275054 instance=ExtResource("1_e05a3")]
 
+[node name="Camera2D" type="Camera2D" parent="car" unique_id=381650065]
+rotation = -1.5707964
+zoom = Vector2(0.97, 0.97)
+
 [node name="parked3" parent="." unique_id=171156178 instance=ExtResource("2_wl4x5")]
 position = Vector2(289, -112.999985)
 rotation = 0.116937056
@@ -47,7 +51,7 @@ position = Vector2(220.99998, -119.99999)
 region_rect = Rect2(322, 0, 64, 80)
 
 [node name="guardrail" parent="." unique_id=1214562366 instance=ExtResource("3_olpmc")]
-position = Vector2(152, -210)
+position = Vector2(770, -209)
 
 [node name="guardrail2" parent="." unique_id=898715633 instance=ExtResource("3_olpmc")]
 position = Vector2(-355, 702)
@@ -60,9 +64,6 @@ rotation = 3.1415927
 [node name="guardrail4" parent="." unique_id=1393417219 instance=ExtResource("3_olpmc")]
 position = Vector2(355, -690)
 rotation = 1.5707964
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=381650065]
-zoom = Vector2(0.97, 0.97)
 
 [node name="docs_spawn_path" type="Path2D" parent="." unique_id=1446823583]
 position = Vector2(-2.1304703, 7.93621)
