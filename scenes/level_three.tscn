@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_4i5uq"]
 [ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_jyl00"]
 [ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="3_jyl00"]
+[ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="4_ol28e"]
 
 [node name="LevelThree" type="Node2D" unique_id=1367023866]
 
@@ -13,3 +14,6 @@ position = Vector2(320, 180)
 
 [node name="player" parent="." unique_id=1549434360 instance=ExtResource("3_jyl00")]
 position = Vector2(46, -4)
+
+[node name="Camera" parent="." unique_id=418440835 instance=ExtResource("4_ol28e")]
+offset = Vector2(320, 180)

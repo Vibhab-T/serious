@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1ouur8xpygky"]
+
+[ext_resource type="Script" uid="uid://374jyav3hgwk" path="res://scripts/spinner.gd" id="1_i3bsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3bsr"]
+size = Vector2(33, 12)
+
+[node name="Spinner" type="Node2D" unique_id=874532454]
+script = ExtResource("1_i3bsr")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1688352275]
+polygon = PackedVector2Array(-20, -9, -20, 9, -16, 7, 11, 7, 13, 9, 13, -8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=391907651]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=232901199]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_i3bsr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="7_4p75b"]
 [ext_resource type="PackedScene" uid="uid://cd05ikpjm6y28" path="res://scenes/level_two.tscn" id="7_astit"]
 [ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="8_y8ti4"]
+[ext_resource type="PackedScene" uid="uid://pbs4xpais1er" path="res://scenes/docs.tscn" id="10_o5wbv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
 
@@ -69,3 +70,8 @@ z_index = 1
 
 [node name="Camera" parent="." unique_id=418440835 instance=ExtResource("8_y8ti4")]
 offset = Vector2(320, 180)
+
+[node name="Docs" type="Node" parent="." unique_id=1543664245]
+
+[node name="Docs" parent="Docs" unique_id=8938603 instance=ExtResource("10_o5wbv")]
+position = Vector2(120, 70)

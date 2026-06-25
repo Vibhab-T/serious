@@ -3,6 +3,8 @@ extends Node
 var total_docs: int = 0
 var total_spawned_docs: int = 0
 
+var gravity: bool = true
+
 func check_level_cleared() -> bool:
 	if total_docs == total_spawned_docs:
 		EventController.emit_signal("level_cleared")

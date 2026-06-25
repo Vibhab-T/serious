@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://celgdvejitk6j"]
 
 [ext_resource type="Texture2D" uid="uid://bgsoas3qkdbee" path="res://assets/background.png" id="1_bkp1e"]
+[ext_resource type="Script" uid="uid://enbfqb6o0vc" path="res://scripts/background.gd" id="1_y0upk"]
 
 [node name="Background" type="Node2D" unique_id=68444420]
 z_index = -2
+script = ExtResource("1_y0upk")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1299832263]
 texture = ExtResource("1_bkp1e")
