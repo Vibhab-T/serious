@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://b04h3ib1i0vka"]
+[gd_scene format=3 uid="uid://dvhrjs12okenq"]
 
-[ext_resource type="Script" uid="uid://vnhy3rxb81il" path="res://scripts/ferris.gd" id="1_tvnib"]
-[ext_resource type="Texture2D" uid="uid://bl4jvvraujjtx" path="res://assets/ferris_frame_main.png" id="2_o7yap"]
-[ext_resource type="Texture2D" uid="uid://cc0ljqeaemr66" path="res://assets/ferris_stand.png" id="3_tvnib"]
+[ext_resource type="Script" uid="uid://bbovqeydxeh6s" path="res://scripts/mini_ferris.gd" id="1_2hjte"]
+[ext_resource type="Texture2D" uid="uid://cntyqd1j7wiw1" path="res://assets/mini_ferris.png" id="2_2hjte"]
+[ext_resource type="Texture2D" uid="uid://cc0ljqeaemr66" path="res://assets/ferris_stand.png" id="3_aknhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7lj6"]
 size = Vector2(30, 59)
 
 [node name="Ferris" type="Node2D" unique_id=442394560]
-script = ExtResource("1_tvnib")
+script = ExtResource("1_2hjte")
 
 [node name="Pillar" type="StaticBody2D" parent="." unique_id=229521126]
 collision_layer = 2
@@ -17,14 +17,15 @@ collision_mask = 2
 [node name="ferris_wheel" type="Sprite2D" parent="Pillar" unique_id=1302535850]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(-1, -25)
+position = Vector2(1, 1)
 scale = Vector2(0.7583333, 0.7583333)
-texture = ExtResource("2_o7yap")
+texture = ExtResource("2_2hjte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar" unique_id=312728508]
-position = Vector2(0, -40.5)
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_e7lj6")
 
 [node name="ferris_support" type="Sprite2D" parent="." unique_id=2089099278]
-position = Vector2(-3, 43)
-texture = ExtResource("3_tvnib")
+z_index = -1
+position = Vector2(-2, 83)
+texture = ExtResource("3_aknhf")

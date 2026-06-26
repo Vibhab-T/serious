@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="6_mmtqo"]
 [ext_resource type="PackedScene" uid="uid://bine4dq7mxuyb" path="res://scenes/level_gate.tscn" id="7_l7e5k"]
 [ext_resource type="PackedScene" uid="uid://8po25el6caxu" path="res://scenes/level_three.tscn" id="8_kp5rg"]
+[ext_resource type="PackedScene" uid="uid://dvhrjs12okenq" path="res://scenes/mini_ferris.tscn" id="9_1e7uk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8lyp7"]
 
@@ -22,16 +23,9 @@ position = Vector2(32, 64)
 [node name="DocsUI" parent="CanvasLayer" unique_id=803394078 instance=ExtResource("2_kkfyh")]
 
 [node name="Ferris" parent="." unique_id=442394560 instance=ExtResource("3_4yacq")]
-position = Vector2(178, 225)
+position = Vector2(178, 163.465)
 speed = 0.85
-radius = 125.0
-
-[node name="Ferris2" parent="." unique_id=825189162 instance=ExtResource("3_4yacq")]
-position = Vector2(436, 92)
-rotation = 3.1415927
-count = 2
-speed = 0.25
-platform_color = Color(0.80232644, 0.8106295, 0.9843685, 1)
+radius = 90.0
 
 [node name="Boundary" type="StaticBody2D" parent="." unique_id=983527593]
 
@@ -42,11 +36,31 @@ shape = SubResource("WorldBoundaryShape2D_8lyp7")
 [node name="Background" parent="." unique_id=68444420 instance=ExtResource("4_kkfyh")]
 position = Vector2(320, 180)
 
+[node name="Background2" parent="." unique_id=589136568 instance=ExtResource("4_kkfyh")]
+position = Vector2(319, -184)
+rotation = 3.1415927
+
 [node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("5_4yacq")]
 
 [node name="Camera" parent="." unique_id=418440835 instance=ExtResource("6_mmtqo")]
 offset = Vector2(320, 180)
 
 [node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("7_l7e5k")]
-position = Vector2(634, 254)
+position = Vector2(571, 21)
 to_level = ExtResource("8_kp5rg")
+
+[node name="Ferris2" parent="." unique_id=1422554130 instance=ExtResource("9_1e7uk")]
+position = Vector2(360, 248)
+count = 4
+radius = 50.0
+
+[node name="Ferris3" parent="." unique_id=836556820 instance=ExtResource("9_1e7uk")]
+position = Vector2(507, 144)
+count = 4
+radius = 50.0
+
+[node name="Ferris4" parent="." unique_id=787450708 instance=ExtResource("9_1e7uk")]
+position = Vector2(345, 84)
+rotation = -3.1415927
+count = 4
+radius = 50.0

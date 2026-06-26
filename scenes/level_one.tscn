@@ -9,43 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="7_4p75b"]
 [ext_resource type="PackedScene" uid="uid://cd05ikpjm6y28" path="res://scenes/level_two.tscn" id="7_astit"]
 [ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="8_y8ti4"]
+[ext_resource type="PackedScene" uid="uid://dvhrjs12okenq" path="res://scenes/mini_ferris.tscn" id="10_o5wbv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
 
 [node name="LevelOne" type="Node2D" unique_id=1009878679]
 script = ExtResource("1_5rfim")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=978680376]
+[node name="ferris_right" parent="." unique_id=442394560 instance=ExtResource("3_bhu28")]
+position = Vector2(450, 163)
+wheel_speed = 1.8
+count = 4
+speed = 1.8
+radius = 85.0
 
-[node name="DocsUI" parent="CanvasLayer" unique_id=803394078 instance=ExtResource("2_r4wdr")]
+[node name="score" type="CanvasLayer" parent="." unique_id=978680376]
 
-[node name="Ferris" parent="." unique_id=442394560 instance=ExtResource("3_bhu28")]
-position = Vector2(100, 330)
-count = 2
-
-[node name="Ferris2" parent="." unique_id=2109041734 instance=ExtResource("3_bhu28")]
-position = Vector2(230, 145)
-count = 3
-speed = 0.75
-radius = 110.0
-spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
-platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
-
-[node name="Ferris3" parent="." unique_id=127989289 instance=ExtResource("3_bhu28")]
-position = Vector2(469, 93)
-count = 3
-speed = 0.75
-radius = 110.0
-spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
-platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
-
-[node name="Ferris4" parent="." unique_id=1854389814 instance=ExtResource("3_bhu28")]
-position = Vector2(563, 338)
-count = 3
-speed = 0.75
-radius = 110.0
-spoke_color = Color(0.28470632, 0.5598275, 0.77852315, 1)
-platform_color = Color(0.9337268, 0.7990738, 0.68731457, 1)
+[node name="DocsUI" parent="score" unique_id=803394078 instance=ExtResource("2_r4wdr")]
 
 [node name="Boundary" type="StaticBody2D" parent="." unique_id=2076636672]
 
@@ -58,10 +38,24 @@ z_index = 1
 position = Vector2(42, 0)
 
 [node name="Background" parent="." unique_id=68444420 instance=ExtResource("5_r4wdr")]
-position = Vector2(297, 179)
+position = Vector2(318, 180)
+
+[node name="Background2" parent="." unique_id=725610972 instance=ExtResource("5_r4wdr")]
+position = Vector2(319, -167)
+rotation = 3.1415927
+
+[node name="Background3" parent="." unique_id=399823462 instance=ExtResource("5_r4wdr")]
+position = Vector2(-322, 185)
+
+[node name="Background4" parent="." unique_id=1780876354 instance=ExtResource("5_r4wdr")]
+position = Vector2(-313, -133)
+
+[node name="Background5" parent="." unique_id=2036784130 instance=ExtResource("5_r4wdr")]
+position = Vector2(824, -9.000001)
+rotation = -1.5709145
 
 [node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("6_bhu28")]
-position = Vector2(610, -110)
+position = Vector2(581, 24)
 to_level = ExtResource("7_astit")
 
 [node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("7_4p75b")]
@@ -69,3 +63,26 @@ z_index = 1
 
 [node name="Camera" parent="." unique_id=418440835 instance=ExtResource("8_y8ti4")]
 offset = Vector2(320, 180)
+
+[node name="ferris_left" parent="." unique_id=866619305 instance=ExtResource("3_bhu28")]
+position = Vector2(219.835, 128.89)
+wheel_speed = 0.5
+count = 4
+radius = 85.0
+
+[node name="ferris_support" parent="ferris_left" index="1" unique_id=2089099278]
+position = Vector2(-3.8350134, 60.109993)
+scale = Vector2(1.0936505, 1.1608135)
+
+[node name="mini_ferris_left" parent="." unique_id=805215202 instance=ExtResource("10_o5wbv")]
+position = Vector2(94.185, 259.21)
+count = 4
+radius = 50.0
+
+[node name="mini_ferris_right" parent="." unique_id=428553312 instance=ExtResource("10_o5wbv")]
+position = Vector2(573, 237)
+count = 4
+radius = 50.0
+
+[editable path="ferris_right"]
+[editable path="ferris_left"]

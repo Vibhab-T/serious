@@ -24,6 +24,7 @@ GameController="*uid://ctdr5lm4nfkf5"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/stretch/mode="canvas_items"
 
 [physics]
 

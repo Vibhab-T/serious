@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bine4dq7mxuyb"]
 
 [ext_resource type="Script" uid="uid://bh61octs6gegi" path="res://scripts/level_gate.gd" id="1_km1hg"]
+[ext_resource type="Texture2D" uid="uid://csvwcsxjui6ft" path="res://assets/blackhole.png" id="2_qoiq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnmir"]
 size = Vector2(84, 63)
@@ -8,13 +9,15 @@ size = Vector2(84, 63)
 [node name="LevelGate" type="Node2D" unique_id=405960461]
 script = ExtResource("1_km1hg")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1399274911]
-polygon = PackedVector2Array(-20, -11, 37, -11, 37, 50, 24, 50, 24, 11, 20, 2, 14, -2, -12, -1, -18, 4, -20, 11, -19, 51, -31, 51)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=871995952]
+position = Vector2(7, 21)
+texture = ExtResource("2_qoiq1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1342297018]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1802598843]
 position = Vector2(6, 21.5)
+scale = Vector2(1.36, 1.645)
 shape = SubResource("RectangleShape2D_dnmir")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

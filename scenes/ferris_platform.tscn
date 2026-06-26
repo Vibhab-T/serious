@@ -1,35 +1,24 @@
 [gd_scene format=3 uid="uid://c027j16jtn2lc"]
 
 [ext_resource type="Script" uid="uid://ddu7ihjfg8gpu" path="res://scripts/ferris_platform.gd" id="1_gp21u"]
-[ext_resource type="Texture2D" uid="uid://dy1vyldq7txmr" path="res://assets/platform.png" id="2_r2jve"]
+[ext_resource type="Texture2D" uid="uid://csdc735et7y6i" path="res://assets/container (copy).png" id="2_r2jve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5blgu"]
-size = Vector2(30, 12)
+size = Vector2(65, 7)
 
 [node name="FerrisPlatform" type="AnimatableBody2D" unique_id=140009163]
 script = ExtResource("1_gp21u")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1531055854]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -6.0
-offset_right = 15.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="container" type="Sprite2D" parent="." unique_id=2128285141]
+z_index = 1
+texture = ExtResource("2_r2jve")
+region_enabled = true
+region_rect = Rect2(67, 0, 65, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453100296]
+position = Vector2(0.5, -19.5)
 shape = SubResource("RectangleShape2D_5blgu")
 one_way_collision = true
 
 [node name="DocMarker" type="Marker2D" parent="." unique_id=1230785071]
-position = Vector2(0, -19)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=400040664]
-position = Vector2(0, -2.9999998)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_r2jve")
+position = Vector2(0, -39)
