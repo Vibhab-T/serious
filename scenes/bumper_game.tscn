@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://df4o36e57swoc"]
+
+[ext_resource type="PackedScene" uid="uid://cinq6g4j6derg" path="res://scenes/arena.tscn" id="1_3yuvj"]
+[ext_resource type="PackedScene" uid="uid://bcaw3bkapci1r" path="res://scenes/arena_two.tscn" id="2_4blob"]
+
+[node name="bumper_game" type="Node2D" unique_id=644923179]
+
+[node name="arena" parent="." unique_id=943058106 instance=ExtResource("1_3yuvj")]
+
+[node name="arena_two" parent="." unique_id=1104855998 instance=ExtResource("2_4blob")]
+position = Vector2(-7, -430)

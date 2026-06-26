@@ -14,6 +14,7 @@ config/name="Serious"
 run/main_scene="uid://cpmrvda12rgxe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="uid://cpmrvda12rgxe"
 
 [autoload]
 

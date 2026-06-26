@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dumpml3nob78w"]
+
+[ext_resource type="Script" uid="uid://ckb35t2muabse" path="res://scripts/enemy_car.gd" id="1_mr7yb"]
+[ext_resource type="Texture2D" uid="uid://cxymneb407x6b" path="res://assets/bumpercars.png" id="2_mr7yb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y6xc"]
+radius = 23.0
+height = 72.0
+
+[node name="enemy_car" type="CharacterBody2D" unique_id=933737380]
+script = ExtResource("1_mr7yb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396990376]
+z_index = 1
+position = Vector2(-1.9073486e-06, 1.9073486e-06)
+rotation = 1.5707964
+scale = Vector2(1.044352, 1.1010561)
+texture = ExtResource("2_mr7yb")
+region_enabled = true
+region_rect = Rect2(129, 0, 64, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1729356714]
+position = Vector2(-1, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3y6xc")

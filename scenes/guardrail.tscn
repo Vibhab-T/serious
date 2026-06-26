@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d38y7nkom5xpk"]
+
+[ext_resource type="Texture2D" uid="uid://bi6hoij2t5kcc" path="res://assets/bumperwalls.png" id="1_gq1ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1ax"]
+size = Vector2(41.400005, 8.375)
+
+[node name="guardrail" type="StaticBody2D" unique_id=171156178]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1215560893]
+position = Vector2(20, 2)
+texture = ExtResource("1_gq1ax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85383548]
+position = Vector2(19.499979, 2.375)
+scale = Vector2(15, 2)
+shape = SubResource("RectangleShape2D_gq1ax")

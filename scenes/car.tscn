@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://davpig81xfvs6"]
+
+[ext_resource type="Script" uid="uid://1gvdnwgbougm" path="res://scripts/car.gd" id="1_qt2eu"]
+[ext_resource type="Texture2D" uid="uid://cxymneb407x6b" path="res://assets/bumpercars.png" id="2_qt2eu"]
+[ext_resource type="Script" uid="uid://qxnxll30fs2m" path="res://scripts/trail.gd" id="3_50v30"]
+[ext_resource type="Texture2D" uid="uid://d2jjguwr1viro" path="res://assets/car_trail.png" id="3_jtldb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c35m8"]
+radius = 19.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qt2eu"]
+radius = 21.0
+height = 58.0
+
+[node name="car" type="CharacterBody2D" unique_id=1215275054]
+rotation = 1.5707964
+script = ExtResource("1_qt2eu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435583357]
+position = Vector2(-1, -0.99999994)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_c35m8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582301101]
+z_index = 1
+position = Vector2(0, 1.9073486e-06)
+rotation = 1.5707964
+scale = Vector2(0.92923135, 0.94508415)
+texture = ExtResource("2_qt2eu")
+region_enabled = true
+region_rect = Rect2(194.88582, 0, 62.585983, 80)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1429294945]
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=495233772]
+position = Vector2(-1.9999999, 2.0000002)
+shape = SubResource("CapsuleShape2D_qt2eu")
+
+[node name="trail" type="Line2D" parent="." unique_id=503446093]
+top_level = true
+points = PackedVector2Array(-26, -2, 4, -6)
+width = 35.0
+default_color = Color(0.97180504, 1, 0.9811786, 1)
+texture = ExtResource("3_jtldb")
+texture_mode = 2
+script = ExtResource("3_50v30")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

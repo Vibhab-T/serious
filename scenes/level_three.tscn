@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_4i5uq"]
 [ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_jyl00"]
 [ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="3_jyl00"]
+[ext_resource type="PackedScene" uid="uid://b4xvo5y6p866" path="res://scenes/bumpergate.tscn" id="4_ol28e"]
+[ext_resource type="PackedScene" uid="uid://df4o36e57swoc" path="res://scenes/bumper_game.tscn" id="5_jyw0m"]
 
 [node name="LevelThree" type="Node2D" unique_id=1367023866]
 
@@ -13,3 +15,12 @@ position = Vector2(320, 180)
 
 [node name="player" parent="." unique_id=1549434360 instance=ExtResource("3_jyl00")]
 position = Vector2(46, -4)
+
+[node name="bumpergate" parent="." unique_id=790303450 instance=ExtResource("4_ol28e")]
+position = Vector2(626, 287)
+to_level = ExtResource("5_jyw0m")
+
+[node name="Sprite2D" parent="bumpergate" index="0" unique_id=143238938]
+position = Vector2(-159, -128)
+
+[editable path="bumpergate"]

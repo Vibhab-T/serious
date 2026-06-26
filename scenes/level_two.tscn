@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bine4dq7mxuyb" path="res://scenes/level_gate.tscn" id="7_l7e5k"]
 [ext_resource type="PackedScene" uid="uid://8po25el6caxu" path="res://scenes/level_three.tscn" id="8_kp5rg"]
 [ext_resource type="PackedScene" uid="uid://dvhrjs12okenq" path="res://scenes/mini_ferris.tscn" id="9_1e7uk"]
+[ext_resource type="Script" uid="uid://b8rnfwkmdks2j" path="res://scripts/blackholeparticle.gd" id="9_ubnpl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8lyp7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4br1q"]
+radius = 22.79
 
 [node name="LevelTwo" type="Node2D" unique_id=2129866509]
 
@@ -45,10 +49,6 @@ rotation = 3.1415927
 [node name="Camera" parent="." unique_id=418440835 instance=ExtResource("6_mmtqo")]
 offset = Vector2(320, 180)
 
-[node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("7_l7e5k")]
-position = Vector2(571, 21)
-to_level = ExtResource("8_kp5rg")
-
 [node name="Ferris2" parent="." unique_id=1422554130 instance=ExtResource("9_1e7uk")]
 position = Vector2(360, 248)
 count = 4
@@ -64,3 +64,28 @@ position = Vector2(345, 84)
 rotation = -3.1415927
 count = 4
 radius = 50.0
+
+[node name="LevelGate2" parent="." unique_id=405960461 instance=ExtResource("7_l7e5k")]
+position = Vector2(566, 33)
+to_level = ExtResource("8_kp5rg")
+
+[node name="Area2D2" type="Area2D" parent="LevelGate2" unique_id=413484151]
+position = Vector2(6, 23)
+rotation = -1.9722221
+script = ExtResource("9_ubnpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGate2/Area2D2" unique_id=1860982568]
+unique_name_in_owner = true
+position = Vector2(5, 23)
+rotation = 3.5377824
+shape = SubResource("CircleShape2D_4br1q")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="LevelGate2/Area2D2/CollisionShape2D" unique_id=104906867]
+position = Vector2(-0.99, 0)
+rotation = -2.0472713
+amount = 50
+randomness = 1.0
+use_fixed_seed = true
+seed = 1593218479
+gravity = Vector2(200, 200)
+color = Color(0.92941177, 1, 0, 1)

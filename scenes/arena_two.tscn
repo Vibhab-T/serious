@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://bcaw3bkapci1r"]
+
+[ext_resource type="Texture2D" uid="uid://8t8irnraol2o" path="res://assets/carnival_background.png" id="1_btefn"]
+[ext_resource type="PackedScene" uid="uid://d38y7nkom5xpk" path="res://scenes/guardrail.tscn" id="1_hm5iw"]
+[ext_resource type="Script" uid="uid://qlm8stijruy4" path="res://scripts/docs_spawn_path.gd" id="2_btefn"]
+[ext_resource type="Texture2D" uid="uid://d1l0ia8kun6bh" path="res://assets/exit_yo.png" id="4_btefn"]
+
+[sub_resource type="Curve2D" id="Curve2D_smwy4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -277.83582, -285.45258, 0, 0, 0, 0, 156.07779, -292.8557, 0, 0, 0, 0, 470.29858, -257.96695, 0, 0, 0, 0, 508.05978, -96.56024, 0, 0, 0, 0, 510, 271, 0, 0, 0, 0, -512, 291, 0, 0, 0, 0, -525, 28, 0, 0, 0, 0, -520, -289, 0, 0, 0, 0, 104.70151, -213.62447, 0, 0, 0, 0, 346.71646, -93.01284, 0, 0, 0, 0, 340, 34, 0, 0, 0, 0, 240.29854, 226.25319, 0, 0, 0, 0, 44, 209, 0, 0, 0, 0, -442, 231, 0, 0, 0, 0, -315.82092, -179.92416, 0, 0, 0, 0, -99.55225, -190.56636, 0, 0, 0, 0, -27.462688, -100.10764, 0, 0, 0, 0, 190.74637, -19.397558, 0, 0, 0, 0, 155.29694, 28.106323, 0, 0, 0, 0, 111.56718, 94.99938, 0, 0, 0, 0, -18.209717, 128.06519, 0, 0, 0, 0, -355, 153, 0, 0, 0, 0, -238.58212, -78.823235, 0, 0, 0, 0, -109.00537, -25.16809)
+}
+point_count = 24
+
+[node name="arena_two" type="Node2D" unique_id=1104855998]
+
+[node name="docs_spawn_path4" type="Path2D" parent="." unique_id=306645038]
+z_index = 1
+position = Vector2(633, -244.00003)
+rotation = 1.5934856
+scale = Vector2(0.732, 0.569)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path4" unique_id=631816433]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="docs_spawn_path3" type="Path2D" parent="." unique_id=504558570]
+z_index = 1
+position = Vector2(-676, -408)
+scale = Vector2(0.51, 0.449)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path3" unique_id=1907745272]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="docs_spawn_path2" type="Path2D" parent="." unique_id=1997132213]
+z_index = 1
+position = Vector2(-19, -390)
+scale = Vector2(0.524, 0.492)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path2" unique_id=1889491436]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="guardrail14" parent="." unique_id=206575049 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(650, -692)
+
+[node name="guardrail13" parent="." unique_id=1141764046 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(947, -823)
+rotation = -1.5707955
+
+[node name="guardrail12" parent="." unique_id=1049399800 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(947, -195)
+rotation = -1.5707955
+
+[node name="guardrail11" parent="." unique_id=815715750 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(339.99988, -886.99994)
+rotation = -1.5707955
+
+[node name="guardrail10" parent="." unique_id=1640771910 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(-710, -194)
+rotation = -3.1415918
+
+[node name="guardrail9" parent="." unique_id=418927682 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(-980, -301)
+rotation = 1.5707971
+
+[node name="guardrail8" parent="." unique_id=1931789893 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(-1255, -607)
+
+[node name="guardrail7" parent="." unique_id=171156178 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(-627, -606)
+
+[node name="guardrail6" parent="." unique_id=822505735 instance=ExtResource("1_hm5iw")]
+z_index = 1
+position = Vector2(-1, -606)
+
+[node name="ground5" type="Sprite2D" parent="." unique_id=936810858]
+position = Vector2(13, -400)
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_btefn")
+
+[node name="ground4" type="Sprite2D" parent="." unique_id=1748169667]
+position = Vector2(-658, -401)
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="." unique_id=1472775827]
+position = Vector2(-649, -869)
+scale = Vector2(1.0992211, 1.4191793)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7" unique_id=1388578430]
+position = Vector2(576.77203, 3.5231552)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7" unique_id=1928837687]
+position = Vector2(645.0022, -49.324287)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7" unique_id=310144337]
+position = Vector2(-1860.4082, 52.142803)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7" unique_id=1994348020]
+position = Vector2(18.194664, 362.18115)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground7" unique_id=1623526549]
+position = Vector2(-18.194736, 290.30862)
+texture = ExtResource("1_btefn")
+
+[node name="ground8" type="Sprite2D" parent="ground7/ground7/ground7/ground7" unique_id=831380544]
+position = Vector2(2460.8335, -54.961353)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8" unique_id=454628864]
+position = Vector2(14.555447, 355.13483)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground7" unique_id=784963046]
+position = Vector2(-18.194736, 290.30862)
+texture = ExtResource("1_btefn")
+
+[node name="ground8" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8" unique_id=1636455556]
+position = Vector2(-18.194714, 1001.98737)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground8" unique_id=644094498]
+position = Vector2(18.194664, 362.18115)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground8/ground7" unique_id=1657153610]
+position = Vector2(-18.194736, 290.30862)
+texture = ExtResource("1_btefn")
+
+[node name="ground8" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground8" unique_id=2055058146]
+position = Vector2(-567.6749, 2.1140623)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground8/ground8" unique_id=1000710950]
+position = Vector2(18.194664, 362.18115)
+texture = ExtResource("1_btefn")
+
+[node name="ground7" type="Sprite2D" parent="ground7/ground7/ground7/ground7/ground8/ground8/ground8/ground7" unique_id=54452095]
+position = Vector2(-18.194736, 290.30862)
+texture = ExtResource("1_btefn")
+
+[node name="ground6" type="Sprite2D" parent="." unique_id=327381798]
+position = Vector2(692, -442.99994)
+scale = Vector2(1.0992211, 1.4191793)
+texture = ExtResource("1_btefn")
+
+[node name="ground" type="Sprite2D" parent="." unique_id=116351238]
+position = Vector2(-8, 26.999998)
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_btefn")
+
+[node name="ground3" type="Sprite2D" parent="." unique_id=1922293448]
+position = Vector2(663, 27)
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_btefn")
+
+[node name="ground2" type="Sprite2D" parent="." unique_id=63353124]
+position = Vector2(-679, 26.999998)
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_btefn")
+
+[node name="guardrail" parent="." unique_id=841403565 instance=ExtResource("1_hm5iw")]
+position = Vector2(-122, -199)
+
+[node name="guardrail2" parent="." unique_id=576759937 instance=ExtResource("1_hm5iw")]
+position = Vector2(-336, -53)
+rotation = -1.5707964
+
+[node name="guardrail3" parent="." unique_id=974619965 instance=ExtResource("1_hm5iw")]
+position = Vector2(664, 231)
+rotation = 3.1415927
+
+[node name="guardrail4" parent="." unique_id=1675472574 instance=ExtResource("1_hm5iw")]
+position = Vector2(320, -94)
+rotation = 1.5707964
+
+[node name="docs_spawn_path" type="Path2D" parent="." unique_id=1343507340]
+position = Vector2(-8, 2.44)
+scale = Vector2(0.58260864, 0.5637931)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path" unique_id=1682107454]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="guardrail5" parent="." unique_id=1012242340 instance=ExtResource("1_hm5iw")]
+position = Vector2(-638, 234)
+rotation = 3.1415927
+
+[node name="exit" type="Sprite2D" parent="." unique_id=1677252482]
+position = Vector2(886.00006, 151.00002)
+rotation = 1.5934856
+texture = ExtResource("4_btefn")
+region_enabled = true
+region_rect = Rect2(0, 0, 68, 32)
+
+[node name="arrow" type="Sprite2D" parent="exit" unique_id=568365016]
+position = Vector2(-2.020691, -44.96564)
+rotation = 3.1415927
+texture = ExtResource("4_btefn")
+region_enabled = true
+region_rect = Rect2(0, 34, 68, 32)
