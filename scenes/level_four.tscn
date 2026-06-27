@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://bagv5fs66nxnj"]
+
+[ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_1mkaa"]
+[ext_resource type="Script" uid="uid://blxaj32wyhdy7" path="res://scripts/level_four.gd" id="1_tuwuf"]
+[ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_23jtl"]
+[ext_resource type="PackedScene" uid="uid://b04h3ib1i0vka" path="res://scenes/ferris.tscn" id="3_wl4gn"]
+[ext_resource type="PackedScene" uid="uid://dvhrjs12okenq" path="res://scenes/mini_ferris.tscn" id="4_qlnma"]
+[ext_resource type="PackedScene" uid="uid://b1ouur8xpygky" path="res://scenes/spinner.tscn" id="5_5mgce"]
+[ext_resource type="PackedScene" uid="uid://bine4dq7mxuyb" path="res://scenes/level_gate.tscn" id="6_qlnma"]
+[ext_resource type="PackedScene" uid="uid://8po25el6caxu" path="res://scenes/level_three.tscn" id="7_5mgce"]
+[ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="8_t0tbu"]
+[ext_resource type="PackedScene" uid="uid://7uj0u2cv1jqw" path="res://scenes/camera.tscn" id="9_krb5l"]
+[ext_resource type="PackedScene" uid="uid://pbs4xpais1er" path="res://scenes/docs.tscn" id="10_iu4sr"]
+[ext_resource type="AudioStream" uid="uid://dkq3j02r2gbdy" path="res://assets/Bf4.mp3" id="12_0xifx"]
+
+[node name="LevelFour" type="Node2D" unique_id=1948868766]
+script = ExtResource("1_tuwuf")
+
+[node name="Background" parent="." unique_id=68444420 instance=ExtResource("1_1mkaa")]
+position = Vector2(320, 180)
+
+[node name="Background7" parent="." unique_id=731054712 instance=ExtResource("1_1mkaa")]
+position = Vector2(959, 198)
+
+[node name="Background2" parent="." unique_id=595730992 instance=ExtResource("1_1mkaa")]
+position = Vector2(-320, 180)
+
+[node name="Background3" parent="." unique_id=752560969 instance=ExtResource("1_1mkaa")]
+position = Vector2(-320, -135)
+rotation = 3.1415927
+
+[node name="Background4" parent="." unique_id=474187899 instance=ExtResource("1_1mkaa")]
+position = Vector2(320, -135)
+rotation = 3.1415927
+
+[node name="Background5" parent="." unique_id=956229495 instance=ExtResource("1_1mkaa")]
+position = Vector2(320, -135)
+rotation = 3.1415927
+
+[node name="Background6" parent="." unique_id=979238472 instance=ExtResource("1_1mkaa")]
+position = Vector2(960, -133)
+rotation = 3.1415927
+
+[node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("2_23jtl")]
+
+[node name="Foreground6" parent="." unique_id=72626480 instance=ExtResource("2_23jtl")]
+position = Vector2(638, 0)
+
+[node name="Foreground2" parent="." unique_id=1935647914 instance=ExtResource("2_23jtl")]
+position = Vector2(-640, 0)
+
+[node name="Foreground3" parent="." unique_id=1758034389 instance=ExtResource("2_23jtl")]
+position = Vector2(0, 50)
+rotation = 3.1415927
+
+[node name="player" parent="." unique_id=1549434360 instance=ExtResource("8_t0tbu")]
+z_index = 2
+position = Vector2(41, 36)
+
+[node name="Foreground4" parent="." unique_id=1836782231 instance=ExtResource("2_23jtl")]
+position = Vector2(638, 50)
+rotation = 3.1415927
+
+[node name="Foreground5" parent="." unique_id=2070016269 instance=ExtResource("2_23jtl")]
+position = Vector2(1278, 50)
+rotation = 3.1415927
+
+[node name="Ferrises" type="Node" parent="." unique_id=942586286]
+
+[node name="Ferris" parent="Ferrises" unique_id=442394560 instance=ExtResource("3_wl4gn")]
+position = Vector2(488, 163)
+
+[node name="Ferris3" parent="Ferrises" unique_id=103461859 instance=ExtResource("3_wl4gn")]
+position = Vector2(260, -113)
+rotation = 3.1415927
+
+[node name="Ferris2" parent="Ferrises" unique_id=939429870 instance=ExtResource("4_qlnma")]
+position = Vector2(207, 242)
+
+[node name="Ferris4" parent="Ferrises" unique_id=413953993 instance=ExtResource("4_qlnma")]
+position = Vector2(511, -181)
+rotation = 3.1415927
+
+[node name="Spinner" parent="." unique_id=553293788 instance=ExtResource("5_5mgce")]
+position = Vector2(626, -62)
+rotation = -1.5707964
+
+[node name="LevelGate" parent="." unique_id=405960461 instance=ExtResource("6_qlnma")]
+position = Vector2(98, -28)
+to_level = ExtResource("7_5mgce")
+
+[node name="Camera" parent="." unique_id=418440835 instance=ExtResource("9_krb5l")]
+offset = Vector2(320, 180)
+
+[node name="Docs" type="Node" parent="." unique_id=1373437292]
+
+[node name="Docs" parent="Docs" unique_id=8938603 instance=ExtResource("10_iu4sr")]
+position = Vector2(207, 152)
+
+[node name="Docs2" parent="Docs" unique_id=789885639 instance=ExtResource("10_iu4sr")]
+z_index = 1
+position = Vector2(487, 134)
+
+[node name="Docs3" parent="Docs" unique_id=1818606533 instance=ExtResource("10_iu4sr")]
+position = Vector2(619, 16)
+
+[node name="Docs4" parent="Docs" unique_id=683937034 instance=ExtResource("10_iu4sr")]
+z_index = 1
+position = Vector2(39, -240)
+
+[node name="Docs5" parent="Docs" unique_id=333631959 instance=ExtResource("10_iu4sr")]
+z_index = 1
+position = Vector2(263, -95)
+
+[node name="Docs6" parent="Docs" unique_id=1781970124 instance=ExtResource("10_iu4sr")]
+z_index = 1
+position = Vector2(263, -95)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1848066866]
+stream = ExtResource("12_0xifx")
+autoplay = true

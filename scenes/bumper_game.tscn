@@ -8,4 +8,5 @@
 [node name="arena" parent="." unique_id=943058106 instance=ExtResource("1_3yuvj")]
 
 [node name="arena_two" parent="." unique_id=1104855998 instance=ExtResource("2_4blob")]
+z_index = -1
 position = Vector2(-7, -430)

@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://8t8irnraol2o" path="res://assets/carnival_background.png" id="1_btefn"]
 [ext_resource type="PackedScene" uid="uid://d38y7nkom5xpk" path="res://scenes/guardrail.tscn" id="1_hm5iw"]
 [ext_resource type="Script" uid="uid://qlm8stijruy4" path="res://scripts/docs_spawn_path.gd" id="2_btefn"]
-[ext_resource type="Texture2D" uid="uid://d1l0ia8kun6bh" path="res://assets/exit_yo.png" id="4_btefn"]
+[ext_resource type="PackedScene" uid="uid://b3i24mfamk7x8" path="res://scenes/ground.tscn" id="3_xpbbp"]
+[ext_resource type="PackedScene" uid="uid://xdsdn2ie51g" path="res://scenes/exit.tscn" id="4_smwy4"]
+[ext_resource type="PackedScene" uid="uid://cco6jcs5mjndk" path="res://scenes/docs_spawn_path.tscn" id="6_smwy4"]
 
 [sub_resource type="Curve2D" id="Curve2D_smwy4"]
 _data = {
@@ -12,40 +14,6 @@ _data = {
 point_count = 24
 
 [node name="arena_two" type="Node2D" unique_id=1104855998]
-
-[node name="docs_spawn_path4" type="Path2D" parent="." unique_id=306645038]
-z_index = 1
-position = Vector2(633, -244.00003)
-rotation = 1.5934856
-scale = Vector2(0.732, 0.569)
-curve = SubResource("Curve2D_smwy4")
-script = ExtResource("2_btefn")
-
-[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path4" unique_id=631816433]
-position = Vector2(-277.83582, -285.45258)
-rotation = -0.017059661
-
-[node name="docs_spawn_path3" type="Path2D" parent="." unique_id=504558570]
-z_index = 1
-position = Vector2(-676, -408)
-scale = Vector2(0.51, 0.449)
-curve = SubResource("Curve2D_smwy4")
-script = ExtResource("2_btefn")
-
-[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path3" unique_id=1907745272]
-position = Vector2(-277.83582, -285.45258)
-rotation = -0.017059661
-
-[node name="docs_spawn_path2" type="Path2D" parent="." unique_id=1997132213]
-z_index = 1
-position = Vector2(-19, -390)
-scale = Vector2(0.524, 0.492)
-curve = SubResource("Curve2D_smwy4")
-script = ExtResource("2_btefn")
-
-[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path2" unique_id=1889491436]
-position = Vector2(-277.83582, -285.45258)
-rotation = -0.017059661
 
 [node name="guardrail14" parent="." unique_id=206575049 instance=ExtResource("1_hm5iw")]
 z_index = 1
@@ -164,10 +132,8 @@ position = Vector2(692, -442.99994)
 scale = Vector2(1.0992211, 1.4191793)
 texture = ExtResource("1_btefn")
 
-[node name="ground" type="Sprite2D" parent="." unique_id=116351238]
+[node name="ground" parent="." unique_id=666432314 instance=ExtResource("3_xpbbp")]
 position = Vector2(-8, 26.999998)
-scale = Vector2(1.0484375, 1.1912931)
-texture = ExtResource("1_btefn")
 
 [node name="ground3" type="Sprite2D" parent="." unique_id=1922293448]
 position = Vector2(663, 27)
@@ -194,30 +160,47 @@ rotation = 3.1415927
 position = Vector2(320, -94)
 rotation = 1.5707964
 
-[node name="docs_spawn_path" type="Path2D" parent="." unique_id=1343507340]
+[node name="guardrail5" parent="." unique_id=1012242340 instance=ExtResource("1_hm5iw")]
+position = Vector2(-638, 234)
+rotation = 3.1415927
+
+[node name="exit" parent="." unique_id=770920800 instance=ExtResource("4_smwy4")]
+position = Vector2(886.00006, 151.00002)
+
+[node name="SpawnPath" type="Node" parent="." unique_id=105693724]
+
+[node name="docs_spawn_path4" type="Path2D" parent="SpawnPath" unique_id=306645038]
+z_index = 1
+position = Vector2(633, -244.00003)
+rotation = 1.5934856
+scale = Vector2(0.732, 0.569)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="SpawnPath/docs_spawn_path4" unique_id=631816433]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="docs_spawn_path3" parent="SpawnPath" unique_id=1666077539 instance=ExtResource("6_smwy4")]
+position = Vector2(-676, -408)
+
+[node name="docs_spawn_path2" type="Path2D" parent="SpawnPath" unique_id=1997132213]
+z_index = 1
+position = Vector2(-19, -390)
+scale = Vector2(0.524, 0.492)
+curve = SubResource("Curve2D_smwy4")
+script = ExtResource("2_btefn")
+
+[node name="spawnpoint" type="PathFollow2D" parent="SpawnPath/docs_spawn_path2" unique_id=1889491436]
+position = Vector2(-277.83582, -285.45258)
+rotation = -0.017059661
+
+[node name="docs_spawn_path" type="Path2D" parent="SpawnPath" unique_id=1343507340]
 position = Vector2(-8, 2.44)
 scale = Vector2(0.58260864, 0.5637931)
 curve = SubResource("Curve2D_smwy4")
 script = ExtResource("2_btefn")
 
-[node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path" unique_id=1682107454]
+[node name="spawnpoint" type="PathFollow2D" parent="SpawnPath/docs_spawn_path" unique_id=1682107454]
 position = Vector2(-277.83582, -285.45258)
 rotation = -0.017059661
-
-[node name="guardrail5" parent="." unique_id=1012242340 instance=ExtResource("1_hm5iw")]
-position = Vector2(-638, 234)
-rotation = 3.1415927
-
-[node name="exit" type="Sprite2D" parent="." unique_id=1677252482]
-position = Vector2(886.00006, 151.00002)
-rotation = 1.5934856
-texture = ExtResource("4_btefn")
-region_enabled = true
-region_rect = Rect2(0, 0, 68, 32)
-
-[node name="arrow" type="Sprite2D" parent="exit" unique_id=568365016]
-position = Vector2(-2.020691, -44.96564)
-rotation = 3.1415927
-texture = ExtResource("4_btefn")
-region_enabled = true
-region_rect = Rect2(0, 34, 68, 32)

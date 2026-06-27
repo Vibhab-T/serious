@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name PlayerCar extends CharacterBody2D
 
 var engine_power = 400   
 var acceleration = Vector2.ZERO

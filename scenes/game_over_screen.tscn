@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c6fu3j8fjxbhx"]
+
+[ext_resource type="Script" uid="uid://b7gyw8wijxjuw" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="AudioStream" uid="uid://dkq3j02r2gbdy" path="res://assets/Bf4.mp3" id="2_jw6e5"]
+[ext_resource type="Texture2D" uid="uid://70427l74c1gp" path="res://assets/wheel.png" id="3_jw6e5"]
+
+[node name="GameOverScreen" type="Node2D" unique_id=184880335]
+script = ExtResource("1_iwahs")
+
+[node name="Control" type="Control" parent="." unique_id=820109045]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOverLabel" type="Label" parent="Control" unique_id=467525025]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "You have found the exit. "
+
+[node name="QuitButton" type="Button" parent="Control" unique_id=1078074907]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 247.0
+offset_right = 195.0
+offset_bottom = 278.0
+text = "Quit"
+
+[node name="PlayAgainButton" type="Button" parent="Control" unique_id=400363290]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 247.0
+offset_right = 449.0
+offset_bottom = 278.0
+text = "Play Again
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1974623285]
+stream = ExtResource("2_jw6e5")
+autoplay = true
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=636144013]
+z_index = -1
+position = Vector2(587, 332)
+texture = ExtResource("3_jw6e5")
+
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/PlayAgainButton" to="." method="_on_play_again_button_pressed"]

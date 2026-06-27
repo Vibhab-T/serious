@@ -12,7 +12,7 @@ func on_event_doc_collected(value: int) -> void:
 	total_docs.text = str(value).lpad(2, " " )
 
 func on_event_doc_spawned(value: int) -> void:
-	spawned_docs.text = str(value).lpad(2, "/")
+	spawned_docs.text = str(value).lpad(4, "/")
 
 func on_level_cleared() -> void:
 	total_docs.text = "All Docs Collected"

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dovpj8qrrlv68" path="res://scenes/parked.tscn" id="2_wl4x5"]
 [ext_resource type="PackedScene" uid="uid://d38y7nkom5xpk" path="res://scenes/guardrail.tscn" id="3_olpmc"]
 [ext_resource type="Script" uid="uid://qlm8stijruy4" path="res://scripts/docs_spawn_path.gd" id="4_xdvfk"]
-[ext_resource type="FontFile" uid="uid://cqvj5ywlo7jl3" path="res://assets/Tiny5/Tiny5-Regular.ttf" id="7_dpxgc"]
+[ext_resource type="PackedScene" uid="uid://das8qqtlop4tk" path="res://scenes/docs_ui.tscn" id="7_dpxgc"]
 
 [sub_resource type="Curve2D" id="Curve2D_olpmc"]
 _data = {
@@ -50,6 +50,96 @@ position = Vector2(1.624227e-05, -2.6226044e-06)
 scale = Vector2(1.091, 1.108)
 texture = ExtResource("1_4ag8t")
 
+[node name="ground6" type="Sprite2D" parent="." unique_id=1919283493]
+position = Vector2(0, -365)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground7" type="Sprite2D" parent="." unique_id=1914574171]
+position = Vector2(699, -369)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground8" type="Sprite2D" parent="." unique_id=509248288]
+position = Vector2(699, -745)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground9" type="Sprite2D" parent="." unique_id=1638564023]
+position = Vector2(34, -760)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground10" type="Sprite2D" parent="." unique_id=1736140786]
+position = Vector2(-631, -756)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground11" type="Sprite2D" parent="." unique_id=1601060161]
+position = Vector2(-642.00006, -418)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground12" type="Sprite2D" parent="." unique_id=864110046]
+position = Vector2(-1333, -421.99997)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground13" type="Sprite2D" parent="." unique_id=329520667]
+position = Vector2(-1372, 21)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground14" type="Sprite2D" parent="." unique_id=2143168706]
+position = Vector2(-1382, -127)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground15" type="Sprite2D" parent="." unique_id=2002214998]
+position = Vector2(-1599, 375)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground16" type="Sprite2D" parent="." unique_id=1893570928]
+position = Vector2(-1599, 759)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground17" type="Sprite2D" parent="." unique_id=712807105]
+position = Vector2(-929, 946)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground18" type="Sprite2D" parent="." unique_id=2076018723]
+position = Vector2(-72.000015, 769)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground19" type="Sprite2D" parent="." unique_id=962843319]
+position = Vector2(-811, 877)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground20" type="Sprite2D" parent="." unique_id=893733368]
+position = Vector2(-1018, 808)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground21" type="Sprite2D" parent="." unique_id=1573509070]
+position = Vector2(-200.00006, 896.99994)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground22" type="Sprite2D" parent="." unique_id=660197047]
+position = Vector2(450, 730)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
+[node name="ground23" type="Sprite2D" parent="." unique_id=182752928]
+position = Vector2(972, 827.99994)
+scale = Vector2(1.091, 1.108)
+texture = ExtResource("1_4ag8t")
+
 [node name="enemy_car2" parent="." unique_id=933737380 instance=ExtResource("1_7ft05")]
 
 [node name="Sprite2D" parent="enemy_car2" index="0" unique_id=1396990376]
@@ -60,8 +150,17 @@ region_rect = Rect2(-1, 0, 64, 80)
 [node name="car" parent="." unique_id=1215275054 instance=ExtResource("1_e05a3")]
 
 [node name="Camera2D" type="Camera2D" parent="car" unique_id=381650065]
+z_index = -1
 rotation = -1.5707964
 zoom = Vector2(0.97, 0.97)
+
+[node name="DocsUI" parent="car" unique_id=803394078 instance=ExtResource("7_dpxgc")]
+z_index = 1
+offset_left = 34.0
+offset_top = -12.000002
+offset_right = 74.0
+offset_bottom = 27.999998
+rotation = -2.0943952
 
 [node name="parked3" parent="." unique_id=1109635119 instance=ExtResource("2_wl4x5")]
 position = Vector2(289, -112.999985)
@@ -86,6 +185,10 @@ position = Vector2(84, -182)
 position = Vector2(-343, 144)
 rotation = -1.5707964
 
+[node name="guardrail6" parent="." unique_id=571081133 instance=ExtResource("3_olpmc")]
+position = Vector2(-343, 144)
+rotation = -1.5707964
+
 [node name="guardrail3" parent="." unique_id=2080358767 instance=ExtResource("3_olpmc")]
 position = Vector2(-25, 198)
 rotation = 3.1415927
@@ -104,17 +207,6 @@ script = ExtResource("4_xdvfk")
 [node name="spawnpoint" type="PathFollow2D" parent="docs_spawn_path" unique_id=506622291]
 position = Vector2(-277.83582, -285.45258)
 rotation = 0.0009736245
-
-[node name="docs_label" type="RichTextLabel" parent="." unique_id=1902609742]
-unique_name_in_owner = true
-offset_left = -319.0
-offset_top = -169.0
-offset_right = -199.0
-offset_bottom = -114.0
-theme_override_fonts/normal_font = ExtResource("7_dpxgc")
-theme_override_font_sizes/normal_font_size = 10
-bbcode_enabled = true
-metadata/_edit_use_anchors_ = true
 
 [editable path="enemy_car2"]
 [editable path="parked3"]

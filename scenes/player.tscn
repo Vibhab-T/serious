@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://p2xvibdq823p"]
 
 [ext_resource type="Texture2D" uid="uid://j43oc2jj8bqh" path="res://assets/idle_clown_64x32.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://ct5p42wal8q4g" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://6wr1hewjclbo" path="res://assets/Jump.mp3" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -89,3 +90,12 @@ position = Vector2(0, 30)
 
 [node name="Head" type="Marker2D" parent="." unique_id=1593698730]
 position = Vector2(0, -36)
+
+[node name="Left" type="Marker2D" parent="." unique_id=394380216]
+position = Vector2(-38, 0)
+
+[node name="Right" type="Marker2D" parent="." unique_id=844838097]
+position = Vector2(34, 0)
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1599710962]
+stream = ExtResource("3_qhqgy")

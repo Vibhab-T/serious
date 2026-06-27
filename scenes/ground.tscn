@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3i24mfamk7x8"]
+
+[ext_resource type="Texture2D" uid="uid://8t8irnraol2o" path="res://assets/carnival_background.png" id="1_pybca"]
+
+[node name="ground" type="Sprite2D" unique_id=666432314]
+scale = Vector2(1.0484375, 1.1912931)
+texture = ExtResource("1_pybca")

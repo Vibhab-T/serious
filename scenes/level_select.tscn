@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cky0tpo88q0b2"]
+
+[ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_p0wlc"]
+[ext_resource type="Script" uid="uid://cpujcsefnnahd" path="res://scripts/level_select.gd" id="1_rif6e"]
+[ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_2epne"]
+[ext_resource type="PackedScene" uid="uid://dvhrjs12okenq" path="res://scenes/mini_ferris.tscn" id="3_2epne"]
+[ext_resource type="AudioStream" uid="uid://k7mf151aaf8w" path="res://assets/Bg3.mp3" id="5_chg43"]
+
+[node name="LevelSelect" type="Node2D" unique_id=1657861820]
+script = ExtResource("1_rif6e")
+
+[node name="Background" parent="." unique_id=68444420 instance=ExtResource("1_p0wlc")]
+position = Vector2(320, 180)
+
+[node name="Foreground" parent="." unique_id=575690052 instance=ExtResource("2_2epne")]
+
+[node name="Control" type="Control" parent="." unique_id=1989921913]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelOneButton" type="Button" parent="Control" unique_id=36391271]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Level 1"
+
+[node name="LevelTwoButton" type="Button" parent="Control" unique_id=1755506884]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 64.0
+offset_bottom = 85.0
+text = "Level 2"
+
+[node name="LevelThreeButton" type="Button" parent="Control" unique_id=429121680]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 121.0
+offset_right = 64.0
+offset_bottom = 152.0
+text = "Level 3"
+
+[node name="BumperButton" type="Button" parent="Control" unique_id=565483123]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 191.0
+offset_right = 123.0
+offset_bottom = 222.0
+text = "Bumper Arena"
+
+[node name="BackButton" type="Button" parent="Control" unique_id=1423284227]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 273.0
+offset_right = 125.0
+offset_bottom = 304.0
+text = "Back"
+
+[node name="Ferris" parent="." unique_id=442394560 instance=ExtResource("3_2epne")]
+position = Vector2(483, 125)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=962147115]
+stream = ExtResource("5_chg43")
+autoplay = true
+
+[connection signal="pressed" from="Control/LevelOneButton" to="." method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="Control/LevelTwoButton" to="." method="_on_level_two_button_pressed"]
+[connection signal="pressed" from="Control/LevelThreeButton" to="." method="_on_level_three_button_pressed"]
+[connection signal="pressed" from="Control/BumperButton" to="." method="_on_bumper_button_pressed"]
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Serious"
-run/main_scene="uid://cpmrvda12rgxe"
+run/main_scene="uid://c4syhrwb6s1n6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://cpmrvda12rgxe"

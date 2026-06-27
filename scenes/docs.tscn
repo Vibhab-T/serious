@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cuc13pdb55sxc" path="res://assets/docs_floating.png" id="1_hv5w2"]
 [ext_resource type="Script" uid="uid://bnmauggc1iy38" path="res://scripts/platdoc.gd" id="1_w5m6w"]
+[ext_resource type="AudioStream" uid="uid://he3pe04qt37t" path="res://assets/Pickup .mp3" id="3_un571"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w5m6w"]
 atlas = ExtResource("1_hv5w2")
@@ -98,5 +99,8 @@ frame_progress = 0.26617897
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1680554286]
 shape = SubResource("CircleShape2D_3k1ws")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1337952027]
+stream = ExtResource("3_un571")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

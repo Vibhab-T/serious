@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://xdsdn2ie51g"]
+
+[ext_resource type="Texture2D" uid="uid://d1l0ia8kun6bh" path="res://assets/exit_yo.png" id="1_l0aq0"]
+[ext_resource type="PackedScene" uid="uid://cw0dsnj0rmnek" path="res://scenes/arrow.tscn" id="2_uyw7u"]
+
+[node name="exit" type="Sprite2D" unique_id=770920800]
+rotation = 1.5934856
+texture = ExtResource("1_l0aq0")
+region_enabled = true
+region_rect = Rect2(0, 0, 68, 32)
+
+[node name="arrow" parent="." unique_id=1818891744 instance=ExtResource("2_uyw7u")]
+position = Vector2(-3.5906177, 18.086205)

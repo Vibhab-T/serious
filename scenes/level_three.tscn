@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://8po25el6caxu"]
 
 [ext_resource type="PackedScene" uid="uid://celgdvejitk6j" path="res://scenes/background.tscn" id="1_4i5uq"]
+[ext_resource type="Script" uid="uid://v3pqotdngjch" path="res://scripts/level_three.gd" id="1_yguh4"]
 [ext_resource type="PackedScene" uid="uid://1jxsu21805kh" path="res://scenes/foreground.tscn" id="2_jyl00"]
 [ext_resource type="PackedScene" uid="uid://p2xvibdq823p" path="res://scenes/player.tscn" id="3_jyl00"]
 [ext_resource type="PackedScene" uid="uid://b4xvo5y6p866" path="res://scenes/bumpergate.tscn" id="4_ol28e"]
-[ext_resource type="PackedScene" uid="uid://df4o36e57swoc" path="res://scenes/bumper_game.tscn" id="5_jyw0m"]
+[ext_resource type="PackedScene" uid="uid://bkyisjv03741c" path="res://scenes/bumper_arena.tscn" id="5_jyw0m"]
+[ext_resource type="AudioStream" uid="uid://vs7wcjxf2637" path="res://assets/Ferris.wav" id="6_87c5r"]
 
 [node name="LevelThree" type="Node2D" unique_id=1367023866]
+script = ExtResource("1_yguh4")
 
 [node name="Background" parent="." unique_id=68444420 instance=ExtResource("1_4i5uq")]
 position = Vector2(320, 180)
@@ -22,5 +25,9 @@ to_level = ExtResource("5_jyw0m")
 
 [node name="Sprite2D" parent="bumpergate" index="0" unique_id=143238938]
 position = Vector2(-159, -128)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=936906319]
+stream = ExtResource("6_87c5r")
+autoplay = true
 
 [editable path="bumpergate"]
